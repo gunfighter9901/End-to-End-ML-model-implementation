@@ -1,3 +1,44 @@
-<h1>
-Hello World
-</h1>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>House Prediction</title>
+    </head>
+    <body>
+        <h1>California House Price Prediction</h1><br><br>
+        <h2>Enter the values</h2>
+        <form action="{{url_for('predict')}}" method="post">
+            <label>MedInc</label>
+            <input name="MedInc" type="number" step="any" required="required" placeholder="Avg income in x100,000" />
+            <br><br>
+            <label>HouseAge</label>
+            <input name="HouseAge" type="number" step="any" required="required" placeholder="Avg age of houses in the block" />
+            <br><br>
+            <label>AveRooms</label>
+            <input name="AveRooms" type="number" step="any" required="required" placeholder="Avg number of rooms in the houses" />
+            <br><br>
+            <label>AveBedrms</label>
+            <input name="AveBedrms" type="number" step="any" required="required" placeholder="Avg number of bedrooms in the houses" />
+            <br><br>
+            <label>Population</label>
+            <input name="Population" type="number" step="any" required="required" placeholder="Population of the block" />
+            <br><br>
+            <label>AveOccup</label>
+            <input name="AveOccup" type="number" step="any" required="required" placeholder="average number of household members" />
+            <br><br>
+            <label>Latitude</label>
+            <input name="Latitude" type="number" step="any" required="required" placeholder="block group latitude eg: 37.88" />
+            <br><br>
+            <label>Longitude</label>
+            <input name="Longitude" type="number" step="any" required="required" placeholder="block group longitude eg:-122.25" />
+            <br><br><br>
+            <button type="submit">Predict</button>
+        </form>
+
+        <br><br><br>
+        <p>
+            {{prediction_text}}
+        </p>
+
+    </body>
+</html>
